@@ -2,24 +2,25 @@ from langchain_community.vectorstores import FAISS
 from embeddings import create_embeddings
 
 
-print("Loading embeddings...")
-
 embeddings = create_embeddings()
 
-print("Loading FAISS...")
 
-db = FAISS.load_local(
-    "faiss_index",
-    embeddings,
-    allow_dangerous_deserialization=True
-)
+def load_db():
+
+    return FAISS.load_local(
+        "faiss_index",
+        embeddings,
+        allow_dangerous_deserialization=True
+    )
 
 
 def search(question):
 
+    db = load_db()
+
     results = db.similarity_search(
         question,
-        k=1
+        k=3
     )
 
     return results
