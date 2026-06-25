@@ -1,10 +1,6 @@
 # Enterprise Knowledge Assistant (RAG-Based Document Q&A)
 
-An AI-powered Enterprise Knowledge Assistant that allows users to ask natural language questions and receive answers directly from uploaded PDF documents.
-
-This project uses a Retrieval-Augmented Generation (RAG) architecture to retrieve relevant information from enterprise documents and generate grounded responses using a local Large Language Model (LLM).
-
-Built with LangChain, FAISS, Ollama, and Streamlit.
+A Retrieval-Augmented Generation (RAG) system that enables users to upload PDF documents and ask natural language questions with source-cited responses.
 
 ---
 
@@ -33,13 +29,14 @@ Users can ask questions such as:
 
 ## Features
 
-- PDF document ingestion
-- Automatic document chunking
-- Vector similarity search using FAISS
+- PDF Upload Interface
 - Retrieval-Augmented Generation (RAG)
-- Local LLM inference using Ollama
-- Interactive Streamlit web interface
-- Modular and extensible architecture
+- FAISS Vector Database
+- Semantic Search
+- Local LLM Inference using Ollama
+- Source Citations
+- Conversational Memory
+- Streamlit Web Interface
 
 ---
 
@@ -55,25 +52,30 @@ Users can ask questions such as:
 | UI | Streamlit |
 
 ---
+## Screenshots
+
+### Upload Documents
+
+![Upload](screenshots/upload.png)
 
 ## Project Architecture
 
 ```text
-PDF Documents
-     ↓
-Document Loader
-     ↓
-Text Chunking
-     ↓
+PDF Upload
+    ↓
+Document Processing
+    ↓
+Chunking
+    ↓
 Embeddings
-     ↓
+    ↓
 FAISS Vector Store
-     ↓
+    ↓
 Retriever
-     ↓
-Ollama LLM
-     ↓
-Final Response
+    ↓
+LLM (Ollama)
+    ↓
+Answer + Citations
 ```
 
 ---
@@ -221,9 +223,7 @@ Summarize onboarding instructions.
 
 ## Future Improvements
 
-- Multi-document collections
 - Metadata filtering
-- Conversational memory
 - User authentication
 - Cloud deployment
 - Incremental indexing
@@ -236,12 +236,13 @@ Summarize onboarding instructions.
 This project demonstrates practical understanding of:
 
 - Retrieval-Augmented Generation (RAG)
-- Vector databases
-- Semantic search
-- Local LLM deployment
-- Document processing pipelines
-- AI application development
-
+- Vector Databases (FAISS)
+- Semantic Search
+- LLM Integration
+- Prompt Engineering
+- Conversational AI
+- Streamlit Application Development
+- Python Backend Development
 ---
 
 ## Author
